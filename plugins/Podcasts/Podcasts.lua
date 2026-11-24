@@ -53,6 +53,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Folge konnte nicht gestreamt werden. Erneut versuchen.",
         ["Mark as played"] = "Als gespielt markieren",
         ["Mark as unplayed"] = "Als ungespielt markieren",
+        ["Mark all as played"] = "Alle als gespielt markieren",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Innerhalb von 8 Sekunden erneut tippen, um alle Folgen als gespielt zu markieren",
+        ["Marked %d episodes as played"] = "%d Folgen als gespielt markiert",
+        ["Could not save progress. Try again."] = "Fortschritt konnte nicht gespeichert werden. Erneut versuchen.",
         ["Marked as played"] = "Als gespielt markiert",
         ["Marked as unplayed"] = "Als ungespielt markiert",
         ["Delete download"] = "Download löschen",
@@ -106,6 +110,12 @@ local T = {
         ["Deleted %d; kept %d"] = "%d gelöscht; %d behalten",
         ["Deleted %d; kept %d; progress could not be saved"] = "%d gelöscht; %d behalten; Fortschritt konnte nicht gespeichert werden",
         ["Manage downloads"] = "Downloads verwalten",
+        ["Refresh all and download new"] = "Alle aktualisieren und Neue laden",
+        ["Refreshing %d podcasts…"] = "%d Podcasts werden aktualisiert…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d Podcasts aktualisiert; %d neue Folgen in Warteschlange",
+        ["; %d failed"] = "; %d fehlgeschlagen",
+        ["Already refreshing"] = "Aktualisierung läuft bereits",
+        ["No subscriptions"] = "Keine Abonnements",
         ["Manage subscriptions"] = "Abonnements verwalten",
         ["Export subscriptions"] = "Abonnements exportieren",
         ["Subscriptions exported"] = "Abonnements exportiert",
@@ -173,6 +183,10 @@ local T = {
         ["Could not stream episode. Try again."] = "No se pudo transmitir el episodio. Inténtalo de nuevo.",
         ["Mark as played"] = "Marcar como reproducido",
         ["Mark as unplayed"] = "Marcar como no reproducido",
+        ["Mark all as played"] = "Marcar todos como reproducidos",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Toca de nuevo en 8 segundos para marcar todos los episodios como reproducidos",
+        ["Marked %d episodes as played"] = "%d episodios marcados como reproducidos",
+        ["Could not save progress. Try again."] = "No se pudo guardar el progreso. Inténtalo de nuevo.",
         ["Marked as played"] = "Marcado como reproducido",
         ["Marked as unplayed"] = "Marcado como no reproducido",
         ["Delete download"] = "Eliminar descarga",
@@ -226,6 +240,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Eliminados %d; conservados %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Eliminados %d; conservados %d; no se pudo guardar el progreso",
         ["Manage downloads"] = "Gestionar descargas",
+        ["Refresh all and download new"] = "Refrescar todo y descargar nuevos",
+        ["Refreshing %d podcasts…"] = "Refrescando %d podcasts…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcasts refrescados; %d episodios nuevos en cola",
+        ["; %d failed"] = "; %d fallidos",
+        ["Already refreshing"] = "Ya se está refrescando",
+        ["No subscriptions"] = "No hay suscripciones",
         ["Manage subscriptions"] = "Gestionar suscripciones",
         ["Export subscriptions"] = "Exportar suscripciones",
         ["Subscriptions exported"] = "Suscripciones exportadas",
@@ -293,6 +313,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Jaksoa ei voitu suoratoistaa. Yritä uudelleen.",
         ["Mark as played"] = "Merkitse kuunnelluksi",
         ["Mark as unplayed"] = "Merkitse kuuntelemattomaksi",
+        ["Mark all as played"] = "Merkitse kaikki kuunnelluiksi",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Napauta uudelleen 8 sekunnin kuluessa merkitäksesi kaikki jaksot kuunnelluiksi",
+        ["Marked %d episodes as played"] = "%d jaksoa merkitty kuunnelluiksi",
+        ["Could not save progress. Try again."] = "Edistymistä ei voitu tallentaa. Yritä uudelleen.",
         ["Marked as played"] = "Merkitty kuunnelluksi",
         ["Marked as unplayed"] = "Merkitty kuuntelemattomaksi",
         ["Delete download"] = "Poista lataus",
@@ -346,6 +370,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Poistettu %d; säilytetty %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Poistettu %d; säilytetty %d; edistymistä ei voitu tallentaa",
         ["Manage downloads"] = "Hallitse latauksia",
+        ["Refresh all and download new"] = "Päivitä kaikki ja lataa uudet",
+        ["Refreshing %d podcasts…"] = "Päivitetään %d podcastia…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcastia päivitetty; %d uutta jaksoa jonossa",
+        ["; %d failed"] = "; %d epäonnistui",
+        ["Already refreshing"] = "Päivitys on jo käynnissä",
+        ["No subscriptions"] = "Ei tilauksia",
         ["Manage subscriptions"] = "Hallitse tilauksia",
         ["Export subscriptions"] = "Vie tilaukset",
         ["Subscriptions exported"] = "Tilaukset viety",
@@ -413,6 +443,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Impossible de diffuser l'épisode. Réessayez.",
         ["Mark as played"] = "Marquer comme lu",
         ["Mark as unplayed"] = "Marquer comme non lu",
+        ["Mark all as played"] = "Tout marquer comme lu",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Appuyez à nouveau sous 8 secondes pour marquer tous les épisodes comme lus",
+        ["Marked %d episodes as played"] = "%d épisodes marqués comme lus",
+        ["Could not save progress. Try again."] = "Impossible d'enregistrer la progression. Réessayez.",
         ["Marked as played"] = "Marqué comme lu",
         ["Marked as unplayed"] = "Marqué comme non lu",
         ["Delete download"] = "Supprimer le téléchargement",
@@ -466,6 +500,12 @@ local T = {
         ["Deleted %d; kept %d"] = "%d supprimés ; %d conservés",
         ["Deleted %d; kept %d; progress could not be saved"] = "%d supprimés ; %d conservés ; impossible d'enregistrer la progression",
         ["Manage downloads"] = "Gérer les téléchargements",
+        ["Refresh all and download new"] = "Tout actualiser et télécharger les nouveaux",
+        ["Refreshing %d podcasts…"] = "Actualisation de %d podcasts…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcasts actualisés ; %d nouveaux épisodes en file d'attente",
+        ["; %d failed"] = " ; %d en échec",
+        ["Already refreshing"] = "Actualisation déjà en cours",
+        ["No subscriptions"] = "Aucun abonnement",
         ["Manage subscriptions"] = "Gérer les abonnements",
         ["Export subscriptions"] = "Exporter les abonnements",
         ["Subscriptions exported"] = "Abonnements exportés",
@@ -533,6 +573,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Impossibile riprodurre l'episodio in streaming. Riprova.",
         ["Mark as played"] = "Segna come ascoltato",
         ["Mark as unplayed"] = "Segna come non ascoltato",
+        ["Mark all as played"] = "Segna tutti come ascoltati",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Tocca di nuovo entro 8 secondi per segnare tutti gli episodi come ascoltati",
+        ["Marked %d episodes as played"] = "%d episodi segnati come ascoltati",
+        ["Could not save progress. Try again."] = "Impossibile salvare i progressi. Riprova.",
         ["Marked as played"] = "Segnato come ascoltato",
         ["Marked as unplayed"] = "Segnato come non ascoltato",
         ["Delete download"] = "Elimina download",
@@ -586,6 +630,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Eliminati %d; mantenuti %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Eliminati %d; mantenuti %d; impossibile salvare i progressi",
         ["Manage downloads"] = "Gestisci download",
+        ["Refresh all and download new"] = "Aggiorna tutto e scarica i nuovi",
+        ["Refreshing %d podcasts…"] = "Aggiornamento di %d podcast…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcast aggiornati; %d nuovi episodi in coda",
+        ["; %d failed"] = "; %d non riusciti",
+        ["Already refreshing"] = "Aggiornamento già in corso",
+        ["No subscriptions"] = "Nessuna iscrizione",
         ["Manage subscriptions"] = "Gestisci iscrizioni",
         ["Export subscriptions"] = "Esporta iscrizioni",
         ["Subscriptions exported"] = "Iscrizioni esportate",
@@ -653,6 +703,10 @@ local T = {
         ["Could not stream episode. Try again."] = "エピソードをストリーミングできませんでした。再試行してください。",
         ["Mark as played"] = "再生済みにする",
         ["Mark as unplayed"] = "未再生にする",
+        ["Mark all as played"] = "すべて再生済みにする",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "すべてのエピソードを再生済みにするには8秒以内にもう一度タップしてください",
+        ["Marked %d episodes as played"] = "%d 件のエピソードを再生済みにしました",
+        ["Could not save progress. Try again."] = "進行状況を保存できませんでした。再試行してください。",
         ["Marked as played"] = "再生済みにしました",
         ["Marked as unplayed"] = "未再生にしました",
         ["Delete download"] = "ダウンロードを削除",
@@ -706,6 +760,12 @@ local T = {
         ["Deleted %d; kept %d"] = "%d 件削除・%d 件保持",
         ["Deleted %d; kept %d; progress could not be saved"] = "%d 件削除・%d 件保持（進行状況を保存できませんでした）",
         ["Manage downloads"] = "ダウンロードを管理",
+        ["Refresh all and download new"] = "すべて更新して新着をダウンロード",
+        ["Refreshing %d podcasts…"] = "%d 件のポッドキャストを更新中…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d 件のポッドキャストを更新、%d 件の新着エピソードをダウンロード待ちに追加",
+        ["; %d failed"] = "、%d 件失敗",
+        ["Already refreshing"] = "すでに更新中です",
+        ["No subscriptions"] = "登録がありません",
         ["Manage subscriptions"] = "登録番組を管理",
         ["Export subscriptions"] = "登録リストをエクスポート",
         ["Subscriptions exported"] = "登録リストをエクスポートしました",
@@ -773,6 +833,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Kan aflevering niet streamen. Probeer het opnieuw.",
         ["Mark as played"] = "Markeren als afgespeeld",
         ["Mark as unplayed"] = "Markeren als niet afgespeeld",
+        ["Mark all as played"] = "Alles als afgespeeld markeren",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Tik binnen 8 seconden opnieuw om alle afleveringen als afgespeeld te markeren",
+        ["Marked %d episodes as played"] = "%d afleveringen als afgespeeld gemarkeerd",
+        ["Could not save progress. Try again."] = "Voortgang kon niet worden opgeslagen. Probeer het opnieuw.",
         ["Marked as played"] = "Gemarkeerd als afgespeeld",
         ["Marked as unplayed"] = "Gemarkeerd als niet afgespeeld",
         ["Delete download"] = "Download verwijderen",
@@ -826,6 +890,12 @@ local T = {
         ["Deleted %d; kept %d"] = "%d verwijderd; %d behouden",
         ["Deleted %d; kept %d; progress could not be saved"] = "%d verwijderd; %d behouden; voortgang kon niet worden opgeslagen",
         ["Manage downloads"] = "Downloads beheren",
+        ["Refresh all and download new"] = "Alles vernieuwen en nieuwe downloaden",
+        ["Refreshing %d podcasts…"] = "%d podcasts vernieuwen…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcasts vernieuwd; %d nieuwe afleveringen in wachtrij",
+        ["; %d failed"] = "; %d mislukt",
+        ["Already refreshing"] = "Vernieuwen is al bezig",
+        ["No subscriptions"] = "Geen abonnementen",
         ["Manage subscriptions"] = "Abonnementen beheren",
         ["Export subscriptions"] = "Abonnementen exporteren",
         ["Subscriptions exported"] = "Abonnementen geëxporteerd",
@@ -893,6 +963,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Não foi possível transmitir o episódio. Tente novamente.",
         ["Mark as played"] = "Marcar como reproduzido",
         ["Mark as unplayed"] = "Marcar como não reproduzido",
+        ["Mark all as played"] = "Marcar todos como reproduzidos",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Toque novamente em até 8 segundos para marcar todos os episódios como reproduzidos",
+        ["Marked %d episodes as played"] = "%d episódios marcados como reproduzidos",
+        ["Could not save progress. Try again."] = "Não foi possível salvar o progresso. Tente novamente.",
         ["Marked as played"] = "Marcado como reproduzido",
         ["Marked as unplayed"] = "Marcado como não reproduzido",
         ["Delete download"] = "Excluir download",
@@ -946,6 +1020,12 @@ local T = {
         ["Deleted %d; kept %d"] = "%d excluídos; %d mantidos",
         ["Deleted %d; kept %d; progress could not be saved"] = "%d excluídos; %d mantidos; não foi possível salvar o progresso",
         ["Manage downloads"] = "Gerenciar downloads",
+        ["Refresh all and download new"] = "Atualizar tudo e baixar novos",
+        ["Refreshing %d podcasts…"] = "Atualizando %d podcasts…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "%d podcasts atualizados; %d novos episódios na fila",
+        ["; %d failed"] = "; %d com falha",
+        ["Already refreshing"] = "Atualização já em andamento",
+        ["No subscriptions"] = "Nenhuma assinatura",
         ["Manage subscriptions"] = "Gerenciar inscrições",
         ["Export subscriptions"] = "Exportar inscrições",
         ["Subscriptions exported"] = "Inscrições exportadas",
@@ -1013,6 +1093,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Не удалось воспроизвести поток. Повторите попытку.",
         ["Mark as played"] = "Отметить прослушанным",
         ["Mark as unplayed"] = "Отметить непрослушанным",
+        ["Mark all as played"] = "Отметить все как прослушанные",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Нажмите ещё раз в течение 8 секунд, чтобы отметить все выпуски как прослушанные",
+        ["Marked %d episodes as played"] = "Отмечено как прослушанные: %d",
+        ["Could not save progress. Try again."] = "Не удалось сохранить прогресс. Повторите попытку.",
         ["Marked as played"] = "Отмечено прослушанным",
         ["Marked as unplayed"] = "Отмечено непрослушанным",
         ["Delete download"] = "Удалить загрузку",
@@ -1066,6 +1150,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Удалено: %d; оставлено: %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Удалено: %d; оставлено: %d; не удалось сохранить прогресс",
         ["Manage downloads"] = "Управление загрузками",
+        ["Refresh all and download new"] = "Обновить все и загрузить новые",
+        ["Refreshing %d podcasts…"] = "Обновление подкастов: %d…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "Обновлено подкастов: %d; новых выпусков в очереди: %d",
+        ["; %d failed"] = "; ошибок: %d",
+        ["Already refreshing"] = "Обновление уже выполняется",
+        ["No subscriptions"] = "Нет подписок",
         ["Manage subscriptions"] = "Управление подписками",
         ["Export subscriptions"] = "Экспорт подписок",
         ["Subscriptions exported"] = "Подписки экспортированы",
@@ -1133,6 +1223,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Не вдалося відтворити потік. Спробуйте ще раз.",
         ["Mark as played"] = "Позначити прослуханим",
         ["Mark as unplayed"] = "Позначити непрослуханим",
+        ["Mark all as played"] = "Позначити всі як прослухані",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Торкніться ще раз протягом 8 секунд, щоб позначити всі випуски як прослухані",
+        ["Marked %d episodes as played"] = "Позначено як прослухані: %d",
+        ["Could not save progress. Try again."] = "Не вдалося зберегти прогрес. Спробуйте ще раз.",
         ["Marked as played"] = "Позначено прослуханим",
         ["Marked as unplayed"] = "Позначено непрослуханим",
         ["Delete download"] = "Видалити завантаження",
@@ -1186,6 +1280,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Видалено: %d; залишено: %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Видалено: %d; залишено: %d; не вдалося зберегти прогрес",
         ["Manage downloads"] = "Керування завантаженнями",
+        ["Refresh all and download new"] = "Оновити все й завантажити нові",
+        ["Refreshing %d podcasts…"] = "Оновлення подкастів: %d…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "Оновлено подкастів: %d; нових випусків у черзі: %d",
+        ["; %d failed"] = "; помилок: %d",
+        ["Already refreshing"] = "Оновлення вже виконується",
+        ["No subscriptions"] = "Немає підписок",
         ["Manage subscriptions"] = "Керування підписками",
         ["Export subscriptions"] = "Експорт підписок",
         ["Subscriptions exported"] = "Підписки експортовано",
@@ -1253,6 +1353,10 @@ local T = {
         ["Could not stream episode. Try again."] = "Không thể phát trực tuyến tập này. Hãy thử lại.",
         ["Mark as played"] = "Đánh dấu đã nghe",
         ["Mark as unplayed"] = "Đánh dấu chưa nghe",
+        ["Mark all as played"] = "Đánh dấu tất cả là đã phát",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "Chạm lại trong vòng 8 giây để đánh dấu tất cả các tập là đã phát",
+        ["Marked %d episodes as played"] = "Đã đánh dấu %d tập là đã phát",
+        ["Could not save progress. Try again."] = "Không thể lưu tiến trình. Hãy thử lại.",
         ["Marked as played"] = "Đã đánh dấu đã nghe",
         ["Marked as unplayed"] = "Đã đánh dấu chưa nghe",
         ["Delete download"] = "Xóa bản tải",
@@ -1306,6 +1410,12 @@ local T = {
         ["Deleted %d; kept %d"] = "Đã xóa %d; giữ lại %d",
         ["Deleted %d; kept %d; progress could not be saved"] = "Đã xóa %d; giữ lại %d; không thể lưu tiến trình",
         ["Manage downloads"] = "Quản lý bản tải",
+        ["Refresh all and download new"] = "Làm mới tất cả và tải tập mới",
+        ["Refreshing %d podcasts…"] = "Đang làm mới %d podcast…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "Đã làm mới %d podcast; %d tập mới đã vào hàng chờ",
+        ["; %d failed"] = "; %d lỗi",
+        ["Already refreshing"] = "Đang làm mới rồi",
+        ["No subscriptions"] = "Chưa có đăng ký",
         ["Manage subscriptions"] = "Quản lý đăng ký",
         ["Export subscriptions"] = "Xuất đăng ký",
         ["Subscriptions exported"] = "Đã xuất đăng ký",
@@ -1373,6 +1483,10 @@ local T = {
         ["Could not stream episode. Try again."] = "无法在线播放单集。请重试。",
         ["Mark as played"] = "标为已播",
         ["Mark as unplayed"] = "标为未播",
+        ["Mark all as played"] = "全部标记为已播放",
+        ["Tap again within 8 seconds to mark all episodes as played"] = "8 秒内再次点按即可将所有单集标记为已播放",
+        ["Marked %d episodes as played"] = "已将 %d 个单集标记为已播放",
+        ["Could not save progress. Try again."] = "无法保存进度。请重试。",
         ["Marked as played"] = "已标为已播",
         ["Marked as unplayed"] = "已标为未播",
         ["Delete download"] = "删除下载",
@@ -1426,6 +1540,12 @@ local T = {
         ["Deleted %d; kept %d"] = "已删除 %d 个；保留 %d 个",
         ["Deleted %d; kept %d; progress could not be saved"] = "已删除 %d 个；保留 %d 个；无法保存进度",
         ["Manage downloads"] = "管理下载",
+        ["Refresh all and download new"] = "全部刷新并下载新单集",
+        ["Refreshing %d podcasts…"] = "正在刷新 %d 个播客…",
+        ["Refreshed %d podcasts; %d new episodes queued"] = "已刷新 %d 个播客；%d 个新单集已加入下载队列",
+        ["; %d failed"] = "；%d 个失败",
+        ["Already refreshing"] = "正在刷新中",
+        ["No subscriptions"] = "没有订阅",
         ["Manage subscriptions"] = "管理订阅",
         ["Export subscriptions"] = "导出订阅",
         ["Subscriptions exported"] = "订阅已导出",
@@ -2880,11 +3000,33 @@ local function open_show(show)
         labels[refresh_index] = { label = tr("Refresh episodes"), icon = ICON.refresh }
         local unsubscribe_index = refresh_index + 1
         labels[unsubscribe_index] = { label = tr("Unsubscribe"), icon = ICON.remove }
+        local mark_all_index = unsubscribe_index + 1
+        labels[mark_all_index] = { label = tr("Mark all as played"), icon = ICON.check }
+        local mark_armed, mark_deadline = false, 0
         plugin.show_list(show.title, labels, function(index)
             if index == refresh_index then
                 fetch_feed(show, false)
             elseif index == unsubscribe_index then
                 confirm_unsubscribe(show)
+            elseif index == mark_all_index then
+                if not mark_armed or os.time() > mark_deadline then
+                    mark_armed, mark_deadline = true, os.time() + 8
+                    plugin.show_toast(tr("Tap again within 8 seconds to mark all episodes as played"))
+                    return
+                end
+                mark_armed = false
+                local marked = 0
+                for _, episode in ipairs(episodes) do
+                    local p = progress[progress_key(show, episode)]
+                    if not (p and p.played) then
+                        p = episode_progress(show, episode)
+                        p.played, p.position, p.new = true, 0, false
+                        marked = marked + 1
+                    end
+                end
+                local saved = save_progress()
+                plugin.show_toast(saved and string.format(tr("Marked %d episodes as played"), marked)
+                    or tr("Could not save progress. Try again."))
             else
                 open_episode(show, episodes[index])
             end
@@ -2919,7 +3061,7 @@ local function request_feed(show, first_open)
     fetching[show.key] = true
     local function failed(start_err)
         fetching[show.key] = nil
-        plugin.show_toast(tr("Could not load episodes. Try again."))
+        feed_response(show, first_open, nil, nil, start_err or "failed")
     end
     local function fetch(url, hops, ranged)
         local opts = request_options(url, ranged and { Range = "bytes=0-" .. (FEED_MAX_BYTES - 1) } or nil)
@@ -2929,13 +3071,11 @@ local function request_feed(show, first_open)
             if location then
                 local next_url = resolve_reference(url, location)
                 if hops >= 8 then
-                    fetching[show.key] = nil
-                    plugin.show_toast(tr("Could not load episodes. Try again."))
+                    failed("redirect")
                     return
                 end
                 if url:match("^https://") and next_url and next_url:match("^http://") then
-                    fetching[show.key] = nil
-                    plugin.show_toast(tr("Could not load episodes. Try again."))
+                    failed("redirect")
                     return
                 end
                 if valid_url(next_url) then
@@ -2963,18 +3103,18 @@ local function request_feed(show, first_open)
     fetch(show.url, 0, false)
 end
 
-feed_response = function(show, first_open, status, body, err)
+local function apply_feed(show, first_open, status, body, err, say)
     if err == "response_too_large" then
         -- Retrying cannot help, so say what is wrong.
-        plugin.show_toast(tr("Feed is too large to load"))
+        say(tr("Feed is too large to load"))
         return
     end
     if err then
-        plugin.show_toast(tr("Could not load episodes. Try again."))
+        say(tr("Could not load episodes. Try again."))
         return
     end
     if status < 200 or status >= 300 then
-        plugin.show_toast(tr("Could not load episodes. Try again."))
+        say(tr("Could not load episodes. Try again."))
         return
     end
     scan_budget = 400000
@@ -2982,18 +3122,18 @@ feed_response = function(show, first_open, status, body, err)
     scan_budget = nil
     collectgarbage("step")
     if not ok then
-        plugin.show_toast(
+        say(
             tr("Could not parse feed")
         )
         return
     end
     if not result then
-        plugin.show_toast(tr("Could not parse feed"))
+        say(tr("Could not parse feed"))
         return
     end
     local prior = get_catalog(show)
     if #result.items == 0 and prior and #prior.items > 0 then
-        plugin.show_toast(tr("The feed returned no episodes; kept the saved list"))
+        say(tr("The feed returned no episodes; kept the saved list"))
         return
     end
     local old = {}
@@ -3006,7 +3146,7 @@ feed_response = function(show, first_open, status, body, err)
     if result.title == "" then
         result.title = show.title
     end
-    local present, added = {}, 0
+    local present, added, fresh = {}, 0, {}
     local new_marked = 0
     for _, e in ipairs(result.items) do
         local p = progress[progress_key(show, e)]
@@ -3021,6 +3161,7 @@ feed_response = function(show, first_open, status, body, err)
         if is_new then
             if prior then
                 added = added + 1
+                fresh[#fresh + 1] = e
             end
             -- At most the newest few per show carry the flag, so hundreds of
             -- shows cannot fill memory with new-episode records.
@@ -3058,9 +3199,73 @@ feed_response = function(show, first_open, status, body, err)
     if first_open then
         open_show(show)
     else
-        plugin.show_toast(added > 0 and string.format(tr("%d new episodes"), added) or tr("No new episodes"))
+        say(added > 0 and string.format(tr("%d new episodes"), added) or tr("No new episodes"))
     end
+    return fresh
 end
+
+-- "Refresh all and download new": one feed at a time (a feed can be 2 MiB),
+-- queueing the episodes each refresh adds. Shows never opened before only
+-- get their catalog; nothing is downloaded for them.
+local refresh_all
+local function refresh_all_next()
+    local run = refresh_all
+    run.index = run.index + 1
+    run.show = run.shows[run.index]
+    if not run.show then
+        refresh_all = nil
+        plugin.show_toast(string.format(tr("Refreshed %d podcasts; %d new episodes queued"), #run.shows - run.failed, run.queued)
+            .. (run.failed > 0 and string.format(tr("; %d failed"), run.failed) or ""))
+        return
+    end
+    if fetching[run.show.key] then
+        run.failed = run.failed + 1
+        defer(refresh_all_next)
+        return
+    end
+    request_feed(run.show, false)
+end
+
+local function start_refresh_all()
+    if refresh_all then
+        plugin.show_toast(tr("Already refreshing"))
+        return
+    end
+    if #subscriptions == 0 then
+        plugin.show_toast(tr("No subscriptions"))
+        return
+    end
+    local shows = {}
+    for i, show in ipairs(subscriptions) do
+        shows[i] = show
+    end
+    refresh_all = { shows = shows, index = 0, queued = 0, failed = 0 }
+    plugin.show_toast(string.format(tr("Refreshing %d podcasts…"), #shows))
+    refresh_all_next()
+end
+
+feed_response = function(show, first_open, status, body, err)
+    local run = refresh_all
+    local batch = run and run.show == show
+    local fresh = apply_feed(show, first_open, status, body, err, batch and function() end or plugin.show_toast)
+    if not batch then
+        return
+    end
+    if fresh then
+        for i = 1, math.min(#fresh, MAX_NEW_PER_SHOW) do
+            if not downloaded(show, fresh[i]) and not queued(show, fresh[i]) then
+                enqueue_download(show, fresh[i], true)
+                if queued(show, fresh[i]) then
+                    run.queued = run.queued + 1
+                end
+            end
+        end
+    else
+        run.failed = run.failed + 1
+    end
+    defer(refresh_all_next)
+end
+
 
 -- Feed completion callbacks deliberately stay on screen only for the first open.
 fetch_feed = function(show, first_open)
@@ -3682,7 +3887,7 @@ local function service_downloads()
     begin_resolve(item)
 end
 
-enqueue_download = function(show, episode)
+enqueue_download = function(show, episode, quiet)
     if queued(show, episode) or downloaded(show, episode) then
         return
     end
@@ -3692,12 +3897,14 @@ enqueue_download = function(show, episode)
     end
     -- A history that could not be read whole cannot record new downloads.
     if progress_partial or downloads >= MAX_DOWNLOADS then
-        plugin.show_toast(tr("Download limit reached. Delete some downloads first."))
+        if not quiet then
+            plugin.show_toast(tr("Download limit reached. Delete some downloads first."))
+        end
         return
     end
     local item = { show = show, episode = episode, key = progress_key(show, episode) }
     queue[#queue + 1] = item
-    if active_download then
+    if active_download and not quiet then
         plugin.show_toast(tr("Episode download queued"))
     end
     service_downloads()
@@ -4164,10 +4371,14 @@ local function open_home()
             plugin.play_file(cont.path)
         end
     end
+    rows[#rows + 1] = { label = tr("Refresh all and download new"), icon = ICON.refresh }
+    actions[#actions + 1] = start_refresh_all
     rows[#rows + 1] = { label = tr("Downloads (File Manager)"), icon = ICON.download }
     actions[#actions + 1] = open_podcasts_downloads
     rows[#rows + 1] = { label = tr("Files on SD card"), icon = ICON.download }
     actions[#actions + 1] = open_sd_files
+    rows[#rows + 1] = { label = tr("Manage downloads"), icon = ICON.download }
+    actions[#actions + 1] = open_download_manager
     if #subscriptions > 0 then
         sort_subscriptions()
         -- New counts come from progress state, so Home never loads every catalog.
@@ -4199,8 +4410,6 @@ local function open_home()
     end
     rows[#rows + 1] = { label = tr("Discover podcasts"), icon = ICON.search }
     actions[#actions + 1] = start_search
-    rows[#rows + 1] = { label = tr("Manage downloads"), icon = ICON.download }
-    actions[#actions + 1] = open_download_manager
     rows[#rows + 1] = { label = tr("Manage subscriptions"), icon = ICON.manage }
     actions[#actions + 1] = open_manage_subscriptions
     rows[#rows + 1] = { label = tr("Settings"), icon = ICON.manage }
