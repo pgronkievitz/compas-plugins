@@ -3497,7 +3497,7 @@ resolve_redirect = function(url, callback, on_handle, is_cancelled)
             callback(nil, err or "Could not start redirect request")
         end
     end
-    step = function(code, request_err, headers)
+    step = function(code, request_err, headers, body_location)
         if is_cancelled and is_cancelled() then
             return
         end
@@ -3512,9 +3512,9 @@ resolve_redirect = function(url, callback, on_handle, is_cancelled)
             callback(nil, request_err)
             return
         end
-        local location
+        local location = body_location
         for k, v in pairs(headers or {}) do
-            if k:lower() == "location" then
+            if not location and k:lower() == "location" then
                 location = v
                 break
             end
@@ -3540,6 +3540,29 @@ resolve_redirect = function(url, callback, on_handle, is_cancelled)
         end
         if (code >= 200 and code < 300) or code == 206 then
             callback(current)
+        elseif code >= 300 and code < 400 and not body_location then
+            -- The native API drops an over-long Location header (Spreaker's
+            -- signed URLs pass 1 kB). Such redirects usually repeat the
+            -- target in an HTML body (meta refresh or link), so read that.
+            defer(function()
+                local opts = request_options(current)
+                opts.method, opts.redirect_limit, opts.max_response_bytes = "GET", 0, 16384
+                request_with_retry(opts, function(body_code, body, body_err)
+                    body = type(body) == "string" and body or ""
+                    local found = body:match('[Uu][Rr][Ll]=(https?://[^"\'<>%s]+)')
+                        or body:match('[Hh][Rr][Ee][Ff]=["\'](https?://[^"\'<>%s]+)')
+                    found = found and found:gsub("&amp;", "&")
+                    if found then
+                        step(code, nil, nil, found)
+                    else
+                        -- No target anywhere: only the native client can
+                        -- follow this hop, so the transfer goes in ranges.
+                        callback(current, nil, true)
+                    end
+                end, function(err)
+                    callback(nil, err or "Could not start redirect request")
+                end)
+            end)
         else
             callback(nil, "HTTP " .. tostring(code))
         end
@@ -3584,9 +3607,106 @@ local function busy_retry(item)
     item.waiting = true
 end
 
+-- plugin.download_file_async follows no redirects, and plugin.http_request
+-- hides a Location header past about 1 kB (Spreaker's signed URLs), so such
+-- a file is fetched in ranges with the native client following redirects.
+local CHUNK_BYTES = 262144 -- small: the device has ~57 MB of RAM
+local function chunked_transfer(item)
+    local part = item.dest .. ".part"
+    local offset, total, tries = 0, nil, 0
+    local next_chunk
+    local function fail()
+        os.remove(part)
+        fail_download(item)
+    end
+    local function on_chunk(code, body, err, headers)
+        if active_download ~= item then
+            os.remove(part)
+            return
+        end
+        item.handle = nil
+        body = type(body) == "string" and body or ""
+        if err or (code ~= 206 and code ~= 200) or #body == 0 then
+            tries = tries + 1
+            if tries > 3 then
+                fail(err or ("HTTP " .. tostring(code)))
+            else
+                defer(next_chunk)
+            end
+            return
+        end
+        if code == 200 and offset > 0 then
+            fail("server ignored Range")
+            return
+        end
+        for k, v in pairs(headers or {}) do
+            if k:lower() == "content-range" then
+                total = tonumber(tostring(v):match("/(%d+)")) or total
+            end
+        end
+        local f = io.open(part, offset == 0 and "wb" or "ab")
+        local ok = f and f:write(body)
+        if f then
+            f:close()
+        end
+        if not ok then
+            fail("write error")
+            return
+        end
+        offset, tries = offset + #body, 0
+        local done_len = #body
+        body = nil
+        if collectgarbage then
+            collectgarbage("collect")
+        end
+        local done = code == 200 or (total and offset >= total) or (not total and done_len < CHUNK_BYTES)
+        if not done then
+            update_download_progress(item, tr("Downloading episode…"), total and offset / total or nil)
+            defer(next_chunk)
+            return
+        end
+        os.remove(item.dest)
+        if not os.rename(part, item.dest) then
+            fail("rename error")
+            return
+        end
+        active_download = nil
+        local p = episode_progress(item.show, item.episode)
+        p.path, p.position = item.dest, 0
+        p.title, p.date, p.epoch = item.episode.title, item.episode.date, item.episode.epoch or 0
+        local saved = save_progress()
+        close_download_progress(item)
+        plugin.show_toast(saved and tr("Episode downloaded") or tr("Episode downloaded, but progress could not be saved"))
+    end
+    next_chunk = function()
+        if active_download ~= item then
+            os.remove(part)
+            return
+        end
+        local opts = request_options(item.final_url, {
+            Range = "bytes=" .. offset .. "-" .. (offset + CHUNK_BYTES - 1),
+        })
+        opts.method, opts.redirect_limit, opts.max_response_bytes = "GET", 5, CHUNK_BYTES
+        local handle, err = start_request(plugin.http_request, opts, on_chunk)
+        if handle then
+            item.handle = handle
+        elseif pool_busy(err) and tries < 30 then
+            tries = tries + 1
+            defer(next_chunk)
+        else
+            fail(err or "could not start request")
+        end
+    end
+    next_chunk()
+end
+
 local function begin_transfer(item)
     item.waiting = false
     update_download_progress(item, tr("Downloading episode…"), nil)
+    if item.needs_follow then
+        chunked_transfer(item)
+        return
+    end
     local handle, request_err = start_request(
         plugin.download_file_async,
         item.final_url,
@@ -3630,7 +3750,7 @@ end
 local function begin_resolve(item)
     item.waiting = false
     update_download_progress(item, tr("Resolving episode URL…"), nil)
-    resolve_redirect(item.episode.url, function(final_url, err)
+    resolve_redirect(item.episode.url, function(final_url, err, needs_follow)
         if active_download ~= item then
             return
         end
@@ -3639,6 +3759,7 @@ local function begin_resolve(item)
             return
         end
         item.final_url = final_url
+        item.needs_follow = needs_follow
         item.waiting = true -- the transfer starts from the next tick
     end, function(handle)
         item.handle = handle
